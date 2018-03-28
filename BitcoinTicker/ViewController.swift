@@ -25,6 +25,11 @@ class ViewController: UIViewController, UIPickerViewDataSource, UIPickerViewDele
     
     func pickerView(_ pickerView: UIPickerView, didSelectRow row: Int, inComponent component: Int) {
         print(currencyArray[row])
+        
+        finalURL = baseURL + currencyArray[row]
+        print(finalURL)
+        currentCurrencySign = currencySignArray[row]
+        getCurrencyData(url: finalURL)
     }
     
     let baseURL = "https://apiv2.bitcoinaverage.com/indices/global/ticker/BTC"
